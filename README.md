@@ -4,11 +4,11 @@ HomeMaker is a self-contained Windows application for meal planning, recipes, in
 
 ## Download
 
-Download the latest Windows installer from the **Releases** section of this repository.
+Download the latest Windows installer from the **Releases** section of the HomeMaker-Release repository.
 
 **Installer:** `HomeMaker-Setup.exe`
 
-This repository is used only to distribute official HomeMaker releases. The application source code is maintained separately and is not published here.
+This distribution repository contains official HomeMaker releases and normal-user documentation. The application source code is maintained separately and is not published here.
 
 ## Requirements
 
@@ -17,12 +17,16 @@ This repository is used only to distribute official HomeMaker releases. The appl
 
 ## Install
 
-1. Open the latest release.
+1. Open the desired release.
 2. Download `HomeMaker-Setup.exe`.
 3. Run the installer.
 4. Launch HomeMaker from the Start menu or desktop shortcut.
 
-Windows may display a SmartScreen warning because the installer is currently unsigned. Verify that the installer was downloaded from this official repository before continuing.
+Windows may display a SmartScreen warning because the installer is currently unsigned. Verify that the installer was downloaded from the official HomeMaker-Release repository before continuing.
+
+## User documentation
+
+User-facing installation, upgrade, backup/restore, troubleshooting, and workflow documentation is maintained alongside each promoted release in this repository.
 
 ## Data
 
@@ -34,11 +38,11 @@ Normal upgrades and uninstall preserve application data unless it is explicitly 
 
 ## Updates
 
-New versions will be published here as GitHub Releases. Download the newer installer and install it over the existing version to upgrade while preserving your data.
+New versions are published as GitHub Releases. Download the newer installer and install it over the existing version to upgrade while preserving your data.
 
 ## Support
 
-If you encounter a problem with an official release, open an issue in this repository with:
+If you encounter a problem with an official release, open an issue in the HomeMaker-Release repository with:
 
 - HomeMaker version
 - Windows version
