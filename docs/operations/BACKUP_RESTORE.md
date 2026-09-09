@@ -4,15 +4,15 @@ HomeMaker provides local application-level backup and restore for the file-backe
 
 ## User workflow
 
-Backup and restore are available from **Settings → Backup & Restore**.
+Backup and restore are available from **Settings → Data & Backup**.
 
-The Settings card lets a user:
+The Data & Backup screen lets a user:
 
 - create a complete local backup;
 - see existing backups with their date/time and size; and
 - restore an earlier backup.
 
-Restoring a backup replaces the current HomeMaker database, media, and configuration with the selected snapshot. The user must type the exact confirmation value `RESTORE` before the restore request is sent. After a successful restore, HomeMaker reloads so the restored state is shown.
+Restoring a backup replaces the current HomeMaker database, media, and configuration with the selected snapshot. HomeMaker opens an in-app confirmation dialog that identifies the selected backup and requires the user to type the exact confirmation value `RESTORE` before the restore request is sent. After a successful restore, HomeMaker reloads so the restored state is shown.
 
 ## What a backup contains
 
@@ -39,7 +39,7 @@ On Windows the normal application-data root is `%LOCALAPPDATA%\HomeMaker` unless
 
 ## API workflow
 
-The Settings UI uses the system backup API. With the backend running, the same operations are available directly for development/troubleshooting:
+The Data & Backup UI uses the system backup API. With the backend running, the same operations are available directly for development/troubleshooting:
 
 List backups:
 
@@ -103,11 +103,11 @@ When `HOMEMAKER_DATABASE_URL` points at another file-backed SQLite database, bac
 Use disposable or deterministic test data, not irreplaceable user data.
 
 1. Start HomeMaker normally.
-2. Open **Settings → Backup & Restore**.
+2. Open **Settings → Data & Backup**.
 3. Select **Create backup** and confirm a new `homemaker-*.hmbackup` entry appears.
 4. Make a visible data change in the test application.
 5. Select **Restore** on the backup created in step 3.
-6. Type `RESTORE` when prompted.
+6. In the in-app restore confirmation, verify the selected backup and replacement warning, then type `RESTORE`.
 7. Confirm HomeMaker reloads and the pre-change data returns.
 
 When Recipe media is involved, also upload an image before creating the backup, replace or remove it after backup creation, restore the backup, and verify the original image and Recipe association return together.

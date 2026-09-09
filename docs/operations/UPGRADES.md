@@ -5,7 +5,7 @@ HomeMaker separates installed application files from persistent user data so a n
 ## Before upgrading
 
 1. Close HomeMaker.
-2. Create a current backup from **Settings → Backup & Restore**.
+2. Create a current backup from **Settings → Data & Backup**.
 3. Keep the backup in the configured HomeMaker backup directory or copy it to another safe location.
 
 Persistent data normally lives under:
