@@ -55,9 +55,16 @@ The launcher:
 
 HomeMaker does not create an inbound Windows Firewall exception for its local API.
 
-Launching HomeMaker a second time while it is already running does not start another backend instance. Close the existing HomeMaker window before launching it again.
+HomeMaker runs as a single desktop instance. Launching HomeMaker again while it is already running does not start another backend. The existing HomeMaker window is shown/restored instead, including when it was minimized or hidden in the Windows system tray.
 
-Closing the HomeMaker desktop window requests a clean backend shutdown.
+Clicking the window **X** hides HomeMaker to the Windows system tray rather than ending the process. The normal minimize button continues to minimize HomeMaker to the taskbar. The first time HomeMaker is closed to the tray, Windows shows a short notification explaining that HomeMaker is still running.
+
+Use the HomeMaker tray icon to:
+
+- double-click or choose **Open HomeMaker** to restore the existing window; or
+- choose **Exit HomeMaker** to fully stop the desktop application and local backend.
+
+Windows shutdown/logoff performs a real application shutdown rather than leaving HomeMaker running in the tray.
 
 ## Data and logs
 
@@ -96,6 +103,8 @@ Do not delete the database to work around a migration failure. Preserve the data
 ## Notifications
 
 HomeMaker's prep-reminder UI remains available in the packaged application. Browser-style operating-system notifications depend on notification support exposed by the embedded Windows webview. If that notification API is unavailable or permission is denied, HomeMaker continues to use the documented in-app reminder list as the fallback.
+
+The one-time "still running in the system tray" notice is emitted by the desktop launcher and does not depend on browser notification permission.
 
 ## Uninstall
 

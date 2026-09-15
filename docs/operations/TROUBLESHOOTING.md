@@ -4,6 +4,24 @@ This page documents failures that follow from the current development, database,
 
 Use the format **Symptom → Cause → Resolution** when adding new entries.
 
+## HomeMaker disappeared after clicking X
+
+**Symptom**
+
+The packaged HomeMaker window disappears after clicking the window **X**, but launching it again does not create a separate application window/process.
+
+**Cause**
+
+This is normal packaged Windows behavior. Clicking **X** hides HomeMaker to the Windows system tray so its local backend can remain available. HomeMaker intentionally permits only one packaged desktop instance.
+
+**Resolution**
+
+Open the Windows system tray and double-click the HomeMaker icon, or right-click it and choose **Open HomeMaker**. Launching HomeMaker again from its shortcut also asks the already-running instance to restore itself.
+
+To fully stop HomeMaker, right-click the tray icon and choose **Exit HomeMaker**. After that process exits, a later launch starts a new HomeMaker instance normally.
+
+If the tray icon is unexpectedly missing while a HomeMaker process remains running, preserve `%LOCALAPPDATA%\HomeMaker\logs\homemaker.log` and restart Windows or end the orphaned process through Task Manager before launching HomeMaker again. Do not delete the HomeMaker data directory or database as a tray-recovery step.
+
 ## Frontend cannot reach the backend
 
 **Symptom**
